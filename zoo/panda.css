@@ -1,0 +1,237 @@
+:root {
+  --black: #131416;
+  --grey: #333642;
+}
+
+body {
+  display: flex;
+  background-color: rgb(37, 169, 252);
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.canvas {
+  height: 60vmin;
+  width: 60vmin;
+  position: relative;
+}
+
+.ear {
+  width: 8vmin;
+  height: 8vmin;
+  position: absolute;
+  top: 2vmin;
+  border: 3vmin solid var(--black);
+  background-color: var(--grey);
+  border-radius: 50%;
+}
+
+.ear.left {
+  left: 12vmin;
+}
+
+.ear.right {
+  right: 12vmin;
+}
+
+.head {
+  width: 30vmin;
+  height: 25vmin;
+  border-radius: 50% 50% 40% 40%;
+  background-color: white;
+  position: absolute;
+  top: 5vmin;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.body {
+  width: 35vmin;
+  height: 35vmin;
+  background-color: var(--black);
+  border-radius: 40%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 2vmin;
+  overflow: hidden;
+}
+.body::before {
+  content: "";
+  width: 35vmin;
+  height: 35vmin;
+  position: absolute;
+  bottom: -10vmin;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.arm {
+  width: 20vmin;
+  height: 10vmin;
+  position: absolute;
+  top: 27vmin;
+  background-color: var(--black);
+  border-radius: 20%/50%;
+}
+
+.arm.left {
+  left: 2vmin;
+  transform: rotate(-25deg);
+}
+
+.arm.right {
+  right: 2vmin;
+  transform: rotate(25deg);
+}
+
+.foot {
+  width: 18vmin;
+  height: 18vmin;
+  position: absolute;
+  background-color: var(--black);
+  bottom: 0;
+  border-radius: 50%;
+}
+.foot.left {
+  left: 8vmin;
+}
+.foot.right {
+  right: 8vmin;
+}
+
+.foot .pad,
+.foot .toe {
+  background-color: var(--grey);
+  left: 50%;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+}
+
+.foot .pad {
+  width: 9vmin;
+  height: 9vmin;
+  bottom: 2vmin;
+}
+
+.foot .toe {
+  width: 4vmin;
+  height: 4vmin;
+  top: 2vmin;
+}
+
+.foot .toe::before,
+.foot .toe::after {
+  content: "";
+  width: 4vmin;
+  height: 4vmin;
+  position: absolute;
+  top: 2vmin;
+  background-color: var(--grey);
+  border-radius: 50%;
+}
+.foot .toe::before {
+  left: -5vmin;
+}
+.foot .toe::after {
+  right: -5vmin;
+}
+
+.head .patch {
+  width: 11vmin;
+  height: 13vmin;
+  background-color: var(--black);
+  border-radius: 50% 50% 70% 30%/29% 27% 73% 71%;
+  position: absolute;
+  top: 5vmin;
+}
+.head .patch.left {
+  left: 3vmin;
+  transform: rotate(10deg);
+}
+.head .patch.right {
+  right: 3vmin;
+  transform: rotateY(-180deg) rotate(10deg);
+}
+.head .eye {
+  width: 4vmin;
+  height: 4vmin;
+  position: absolute;
+  top: 8vmin;
+  border: 1vmin solid white;
+  border-radius: 50%;
+  background-color: black;
+}
+.head .eye.left {
+  left: 6vmin;
+}
+.head .eye.right {
+  right: 6vmin;
+}
+
+.head .eye::before {
+  content: "";
+  position: absolute;
+  width: 2vmin;
+  height: 2vmin;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.head .eye::after {
+  content: "";
+  width: 1vmin;
+  height: 1vmin;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  bottom: 0.5vmin;
+  transform: translateX(-50%);
+}
+
+.nose {
+  height: 3vmin;
+  width: 5vmin;
+  border-radius: 50%;
+  background-color: black;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 15vmin;
+}
+
+.nose::before {
+  content: "";
+  width: 2vmin;
+  height: 1vmin;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 0.5vmin;
+  left: 50%;
+  transform: rotate(15deg);
+}
+.mouse {
+  height: 5vmin;
+  width: 13vmin;
+  background-color: var(--black);
+  position: absolute;
+  bottom: 0.5vmin;
+  left: 50%;
+  transform: translateX(-50%);
+  clip-path: circle(50% at 50% 0);
+}
+.mouse::before {
+  content: "";
+  width: 7vmin;
+  height: 5vmin;
+  position: absolute;
+  bottom: -3vmin;
+  background: red;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+}

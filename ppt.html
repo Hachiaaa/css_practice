@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      for (let i = 0; i < 50; i++) {
+        document.body.innerHTML += `
+            <div style="position:relative;width:90%;padding-top:60%;margin:5%;border:1px solid silver;page-break-after:always;">
+              <div contenteditable style="outline:none;position:absolute;right:10%;bottom:10%;left:10%;top:10%;font-size:5vmin;">
+              </div>
+            </div>`;
+      }
+      document.querySelectorAll("div>div").forEach((el) => {
+        el.onkeydown = (e) => {
+          // `code` will be false if Ctrl or Alt are not pressed
+          // `code` will be 0..8 for numeric keys 1..9
+          // `code` will be some other numeric value if another key is pressed
+          // with Ctrl+Alt hold.
+          const code = e.ctrlKey && e.altKey && e.keyCode - 49;
+          // Find the suitable rich text command, or undefined if the key
+          // is out of range
+          x = [
+            "formatBlock",
+            "formatBlock",
+            "justifyLeft",
+            "justifyCenter",
+            "justifyRight",
+            "outdent",
+            "indent",
+            "insertUnorderedList",
+          ][n];
+          // Find command parameter (only for 1 and 2)
+          y = ["<h1>", "<div>"][n];
+          // Send the command and the parameter (if any) to the editor
+          if (x) {
+            document.execCommand(x, false, y);
+          }
+        };
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .box {
+        width: 200px;
+        height: 200px;
+        font-size: 80px;
+        position: relative;
+        transform-style: preserve-3d;
+        transform: rotateX(30deg) rotateY(30deg);
+      }
+      .box > div {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        line-height: 200px;
+        text-align: center;
+      }
+      .left {
+        transform: translateX(-50%) rotateY(-90deg);
+        background-color: pink;
+      }
+      .right {
+        transform: translateX(50%) rotateY(90deg);
+        background-color: cyan;
+      }
+      .top {
+        transform: translateY(-50%) rotateX(90deg);
+        background-color: lightgreen;
+      }
+      .bottom {
+        transform: translateY(50%) rotateX(-90deg);
+        background-color: lightskyblue;
+      }
+      .front {
+        transform: translateZ(100px);
+        background-color: lightseagreen;
+      }
+      .end {
+        transform: translateZ(-100px) rotateY(-180deg);
+        background-color: lightslategrey;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box" style="transform: rotateX(30deg) rotateY(30deg)">
+      <div class="left">左</div>
+      <div class="right">右</div>
+      <div class="front">前</div>
+      <div class="end">后</div>
+      <div class="top">上</div>
+      <div class="bottom">下</div>
+    </div>
+    <script>
+      let box = document.querySelector(".box");
+      let totalWidth = window.innerWidth;
+      let totalHeight = window.innerHeight;
+      let totalRotateX = 360;
+      let totalRotateY = 360;
+      document.addEventListener("mousemove", mouseMove);
+      function mouseMove(e) {
+        console.log(box.style);
+        let rotateY =
+          Math.round((e.clientX / totalWidth - 0.5) * totalRotateY) + "deg";
+        let rotateX =
+          -Math.round((e.clientY / totalHeight - 0.5) * totalRotateY) + "deg";
+        box.style.transform = `rotateX(${rotateX}) rotateY(${rotateY})`;
+      }
+    </script>
+  </body>
+</html>

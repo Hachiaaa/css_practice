@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .rectangle{
+            width:600px;
+            height:400px;
+            background: red;
+            position: relative;
+        }
+        .stars,.stars::before,.stars::after  {
+       	width: 0;
+        height: 0;
+        border-left: 65px solid transparent;
+        border-right: 65px solid transparent;
+        border-top: 40px solid yellow;
+        position: absolute;
+      }
+      .stars{
+      	top: 80px;
+        left: 40px;
+      }
+      .stars:before,.stars:after{
+      	content: '';
+      	display: block;
+        left: -65px;
+        top: -40px;
+      }
+      .stars::before {
+       	-webkit-transform: rotate(-70deg);
+       	-moz-transform:rotate(-70deg); 
+       	-ms-transform:rotate(-70deg);
+       	-o-transform:rotate(-70deg);
+        transform: rotate(-70deg);
+      }
+      .stars::after {
+       	-webkit-transform:rotate(-146deg);
+       	-moz-transform:rotate(-146deg);
+       	-ms-transform:rotate(-146deg);
+       	-o-transform:rotate(-146deg);
+        transform: rotate(-146deg);
+      }
+      .star2{
+       	-webkit-transform:scale(0.3) rotate(20deg);      /* transform属性中的scale和rotate分开写后面会覆盖前面的*/
+       	-moz-transform:scale(0.3) rotate(20deg);
+       	-ms-transform:scale(0.3) rotate(20deg);
+       	-o-transform:scale(0.3) rotate(20deg);
+        transform:scale(0.3) rotate(20deg);
+        left: 150px;
+        top: 20px;
+      }
+      .star3{
+       	-webkit-transform:scale(0.3) rotate(40deg);
+       	-moz-transform:scale(0.3) rotate(40deg);
+       	-ms-transform:scale(0.3) rotate(40deg);
+       	-o-transform:scale(0.3) rotate(40deg);
+        transform:scale(0.3)  rotate(40deg);
+        left: 189px;
+        top: 59px;
+      }
+      .star4{
+       	-webkit-transform:scale(0.3) rotate(60deg);
+       	-moz-transform:scale(0.3) rotate(60deg);
+       	-ms-transform:scale(0.3) rotate(60deg);
+       	-o-transform:scale(0.3) rotate(60deg);
+        transform:scale(0.3)  rotate(60deg);
+        left: 189px;
+        top: 108px;
+      }
+      .star5{
+       	-webkit-transform:scale(0.3) rotate(80deg);
+       	-moz-transform:scale(0.3) rotate(80deg);
+       	-ms-transform:scale(0.3) rotate(80deg);
+       	-o-transform:scale(0.3) rotate(80deg);
+        transform: scale(0.3) rotate(80deg);
+        left: 150px;
+        top: 147px;
+      }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="rectangle">
+        <div class="star1 stars"></div>
+        <div class="star2 stars"></div>
+        <div class="star3 stars"></div>
+        <div class="star4 stars"></div>
+        <div class="star5 stars"></div>
+    </div>
+</body>
+</html>

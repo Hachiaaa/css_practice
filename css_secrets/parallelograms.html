@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn,div{
+            transform-origin:0 100%;
+        }
+        .btn{
+            display:inline-block;
+            height:150px;
+            width:300px;
+            background-color: aqua;
+            transform: skewX(-45deg);
+        }
+        .btn>div{
+            transform: skewX(45deg);
+        }
+        .pseudo{
+            height:150px;
+            width:300px;
+            margin:200px auto;
+            font-size:50px;
+            position: relative;
+        }
+        .pseudo::before{
+            content:'';
+            position: absolute;
+            top:0;
+            left:0;
+            bottom:0;
+            right:0;
+            z-index:-1;
+            background-color: brown;
+            transform:skewX(-45deg);
+        }
+    </style>
+</head>
+<body>
+    <a href='#1' class='btn'>
+        <div>
+            绿蚁新焙酒，红泥小火炉
+        </div>
+    </a>
+    <div class='pseudo'>
+        欲寒天作雪，能饮一杯无？
+    </div>
+</body>
+</html>

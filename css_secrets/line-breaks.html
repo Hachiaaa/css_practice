@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        dd,dt{
+            display: inline;
+        }
+        dd{
+            margin:0;
+            font-weight:bold;
+        }
+        dd+dt::before{
+            content:"\A";
+            white-space: pre;
+        }
+        dd+dd::before{
+            content:',';
+        }
+    </style>
+</head>
+<body>
+    <dl>     
+        <dt>Name:</dt>  <dd>hachi艹</dd> 
+ 
+        <dt>Email:</dt>   <dd>lea@verou.me</dd> <dd>ee@ee.com</dd>
+     
+        <dt>Location:</dt>   <dd>Earth</dd> 
+    </dl>
+    
+</body>
+</html>

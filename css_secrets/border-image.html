@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #bitmap { 
+            border: 40px solid red;
+            padding: 20px;
+            border-image-source: url("./assets/border.png");
+            border-image-slice: 33.34%;
+            /* 三个值 repeat stretch round */
+            border-image-repeat: repeat;
+            /* 如果超出则向内延伸，小于边框宽度向外延伸 */
+            border-image-width: 20px;
+            border-image-outset: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div id="bitmap">The image is stretched to fill the area.</div>
+</body>
+</html>

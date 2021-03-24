@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .img{
+            width:400px;
+            height:400px;
+            margin:100px auto;
+            padding:10px;
+            border:50px solid transparent;
+            background-image: linear-gradient(white,white),
+                              url('./assets/cat.jpg');
+            background-size:cover;
+            background-clip:padding-box,border-box;
+            background-origin:border-box;
+        }
+        .envelope{
+            width:400px;
+            height:200px;
+            margin:100px auto;
+            padding:10px;
+            border:20px solid transparent;
+            background-image: linear-gradient(white,white),
+                              repeating-linear-gradient(-30deg,pink 0,pink 15px ,transparent 0,transparent 25px,lightblue 0,lightblue 40px,transparent 0,transparent 50px);
+            background-size:cover;
+            background-clip:padding-box,border-box;
+            background-origin:border-box;
+        }
+        .ant{
+            width:400px;
+            height:200px;
+            margin:100px auto;
+            padding:10px;
+            border:2px solid transparent;
+            background-image: linear-gradient(white,white),
+                              repeating-linear-gradient(-45deg,black 0,black 25%,white 0,white 50%);
+            background-size:contain,20px 20px;
+            background-clip:padding-box,border-box;
+            background-origin:border-box;
+            background-position: 0;
+            animation: ant 12s linear infinite;
+        }
+        @keyframes ant {
+            to{
+                background-position: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class='img'>
+        试问闲愁都几许，一川烟草，满城风絮，梅子黄时雨。
+    </div>
+    <div class='envelope'>
+        陌上人如玉，公子世无双。
+    </div>
+    <div class='ant'>
+        红酥手，黄藤酒，满城春色宫墙柳。
+    </div>
+</body>
+</html>

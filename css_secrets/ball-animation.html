@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper{
+            width:100px;
+            height: 700px;
+            margin:200px auto;
+            border-radius:5px;
+            background: linear-gradient(#58a 0%,transparent 100%);
+            position: relative;
+            border-bottom:10px solid greenyellow;
+        }
+        .ball{
+            width:80px;
+            height:80px;
+            background:radial-gradient(at 25% 25%,white 0%,red 100%);
+            border-radius: 50%;
+            position: absolute;
+            left:10px;
+            animation: bounce 4.5s ease-in infinite;
+        }
+        @keyframes bounce {
+            60%,80%,to{
+                transform:translateY(620px);
+                animation-timing-function: ease-out;
+            }
+            70%{
+                transform:translateY(465px);
+            }
+            90%{
+                transform:translateY(558px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class='wrapper'>
+        <div class='ball'></div>
+    </div>
+</body>
+</html>
